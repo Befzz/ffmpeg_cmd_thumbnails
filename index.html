@@ -1,1 +1,104 @@
-<body>index.html!</body>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Балаш™</title>
+<link href="favicon.png" rel="shortcut icon">
+<meta charset="UTF-8">
+<style type="text/css">
+BODY{
+	background-color: #000;
+    text-align: center;
+    margin: 0;
+    padding 0;
+}
+html,body{
+    height: 100%;
+    overflow: hidden;
+}
+#cont{
+    width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+}
+
+#cont:before { 
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle; 
+    height: 100%;
+}
+
+#img-cont {
+    vertical-align: middle;
+    display: inline-block;
+    animation: 3s ease-in-out infinite alternate line0;
+    -webkit-animation-name: line0;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    width:60%;
+}
+#div-image {
+    display: inline-block;
+    width:100%;
+    border-radius: 30px 20% / 60px 30px;
+    box-shadow: 0 0 1em gold;
+    animation: 2s ease-in-out infinite alternate backanim;
+    -webkit-animation-name: backanim;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes line0 {
+0%  {-webkit-transform: rotateZ(-3deg) }
+10% {-webkit-transform: rotateZ(3deg) }
+20% {-webkit-transform: rotateZ(-2deg) }
+30% {-webkit-transform: rotateZ(4deg) }
+40% {-webkit-transform: rotateZ(-1deg) }
+50% {-webkit-transform: rotateZ(7deg) }
+60% {-webkit-transform: rotateZ(-3deg) }
+70% {-webkit-transform: rotateZ(1deg) }
+80% {-webkit-transform: rotateZ(3deg) }
+90% {-webkit-transform: rotateZ(-3deg) }
+100%{-webkit-transform: rotateZ(0deg) }
+}
+@keyframes line0 {
+0%  {transform: rotateZ(-3deg) }
+10% {transform: rotateZ(3deg) }
+20% {transform: rotateZ(-2deg) }
+30% {transform: rotateZ(4deg) }
+40% {transform: rotateZ(-1deg) }
+50% {transform: rotateZ(7deg) }
+60% {transform: rotateZ(-3deg) }
+70% {transform: rotateZ(1deg) }
+80% {transform: rotateZ(3deg) }
+90% {transform: rotateZ(-3deg) }
+100%{transform: rotateZ(0deg) }
+}
+
+@-webkit-keyframes backanim {
+    0% { box-shadow: 0 0 2em gold;     }
+    50% { box-shadow: 0 0 3em yellow; }
+    75% { box-shadow: 0 0 2em orange; }
+    100% { box-shadow: 0 0 4em red;  }
+}
+@keyframes backanim {
+    0% { box-shadow: 0 0 2em gold;     }
+    50% { box-shadow: 0 0 3em yellow; }
+    75% { box-shadow: 0 0 2em orange; }
+    100% { box-shadow: 0 0 4em red;  }
+}
+</style>
+
+</head><body>
+<div id="cont">
+<span id="img-cont">
+<img src="http://i.imgur.com/h0hWmet.jpg" yu="http://i.imgur.com/GW5LB4J.png" id="div-image" >
+</span>
+</div>
+</body>
+<html>
