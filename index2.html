@@ -4,10 +4,9 @@
 <title>Балаш™</title>
 <link href="favicon.png" rel="shortcut icon">
 <meta charset="UTF-8">
-<meta name="mobile-web-app-capable" content="yes">
 <style type="text/css">
 BODY{
-	background-color: #000;
+	background-color: #fff;
     text-align: left;
     font-size: 2.8em;
     font-family: monospace;
@@ -32,8 +31,21 @@ html,body{
     height: 100%;
     display: none;
 }
-pre {
-  display: none;
+
+#img-cont {
+    vertical-align: middle;
+    display: inline-block;
+    width:60%;
+}
+#div-image {
+    display: inline-block;
+    width:100%;
+    border-radius: 30px 20% / 60px 30px;
+    box-shadow: 0 0 1em gold;
+}
+#accx,#accy,#accz{
+    padding: 5px;
+    margin: 3px;
 }
 #accx{background-color:#fcc;}
 #accy{background-color:#cfc;}
@@ -47,11 +59,6 @@ var amin = {'x':0,'y':0,'z':0};
 var dom_acc = {};
 var od;
 var canv;
-
-var toc = function(c){
-  // return Math.min(255,Math.floor(255 * Math.abs(c) / 25))
-  return 255 - Math.min(255,Math.floor(255 * Math.pow(25-c,2) / 625))
-  }
 function onDeviceMotion(event) {
     // od.childNodes[0].nodeValue = JSON.stringify(event.acceleration);
     var acc = event.acceleration;
@@ -61,9 +68,7 @@ function onDeviceMotion(event) {
     }
     // od.childNodes[0].nodeValue = JSON.stringify(amin) + JSON.stringify(amax);
     setText(acc);
-    // Drawer.DrawEvt(acc);
-    
-    document.body.style.backgroundColor = "rgb(" + toc(acc.x) + "," + toc(acc.y) + "," + toc(acc.z) + ")";
+    Drawer.DrawEvt(acc);
 }
 function nicyn(n) {
     return (("    " + Math.round(100 * n) / 100)).substr(-6,6);
@@ -79,23 +84,13 @@ function setText(acc) {
 }
 window.addEventListener("devicemotion", onDeviceMotion, true);
 window.addEventListener("load",function(){
-    od = document.querySelector("#cont");
+    od = document.querySelector("#img-cont");
     Drawer.Init();
     // od.childNodes[0].nodeValue = [1,2].forEach;
     dom_acc['x'] = document.querySelector("#accx");
     dom_acc['y'] = document.querySelector("#accy");
     dom_acc['z'] = document.querySelector("#accz");
-    dom_pre = document.querySelector("pre"); 
-    // document.body.scrollTo(0,1)
-    // window.scrollTo(0,100)
-    // window.requestFullscreen()
 });
-window.addEventListener("click", onClick, true);
-window.addEventListener("touchend", onClick, true);
-var dom_pre;
-function onClick() {
-  dom_pre.style.display = (dom_pre.style.display == 'block'?'none':'block')
-}
 
 var Drawer = {
     cur:0,
@@ -143,9 +138,13 @@ Drawer.Init = function() {
 }
 </script>
 </head><body>
-<pre><div id=accx>.1</div><div id=accy>.2</div><div id=accz>.3</div></pre>
+<pre>
+<div id=accx>.1</div><div id=accy>.2</div><div id=accz>.3</div></pre>
 <canvas id="canvas1"></canvas>
 <div id="cont">
+<span id="img-cont">.
+<img src2="https://i.imgur.com/h0hWmet.jpg" src3="http://i.imgur.com/GW5LB4J.png" id="div-image" >
+</span>
 </div>
 </body>
-</html>
+<html>
